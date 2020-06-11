@@ -1,0 +1,166 @@
+/** index menu */
+.index-menu-container {
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.index-menu {
+    font-size: 45px;
+    line-height: 55px;
+    letter-spacing: 4.3px;
+    padding-top: 95px;
+    text-align: center;
+
+    &-list {
+        display: inline-block;
+        white-space: nowrap;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        margin: 0 0 30px 0;
+
+        &::after {
+            content: " ";
+            display: table;
+        }
+
+        &-item {
+            padding: 20px 60px 0 60px;
+            display: inline-block;
+            white-space: nowrap;
+
+            &+& {
+                padding-left: 120px;
+                background: 0 21px url('../img/inde_menu_item_bg.svg') no-repeat;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+/**  links **/
+.index-menu-list-item-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+}
+
+.index-menu-link-hover-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    .display-off();
+    transition: visibility .8s
+}
+
+.index-menu-list-item-link::after {
+    content: ' ';
+    position: absolute;
+    height: 1px;
+    left: 50%;
+    right: 50%;
+    bottom: 1px;
+    z-index: 10;
+    transition: left @animation-time_default, right @animation-time_default;
+
+}
+
+.index-menu-link_hover .index-menu-link-text {
+    /*visibility: hidden;*/
+}
+
+.index-menu-link_hover .index-menu-link-hover-text {
+    .display-on();
+}
+
+.index-menu-link_hover.index-menu-list-item-link::after {
+    left: 0;
+    right: 0;
+}
+
+.index-menu-list-item-link-image {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    opacity: 0;
+    transition: @display-transition;
+    background: no-repeat fixed;
+    background-size: contain;
+    background-position: center bottom;
+    transform: translateZ(0);
+}
+
+.index-menu-list-item-link-image_visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.index-menu-main .index-menu-list-item-link {
+    color: @main-color;
+}
+
+.index-menu-main .index-menu-list-item-link::after {
+    background: @main-color;
+}
+
+.index-menu-persons .index-menu-list-item-link {
+    color: @colored-color
+}
+
+.index-menu-persons .index-menu-list-item-link::after {
+    background: @colored-color;
+}
+
+#indexLinkImage {
+    &01 {
+        .bg_alpha_calc(#D3E3E6, 0.7, #fff);
+        background-image: url('../img/creative.png');
+    }
+
+    &02 {
+        .bg_alpha_calc(#EADFD2, 0.7, #fff);
+        background-image: url('../img/menu-agibalov.png');
+        background-position: 30% bottom;
+    }
+}
+
+/** index footer **/
+
+
+
+.index-page {
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100vw;
+
+        .container {
+            height: 55px;
+        }
+
+        .icon {
+            .display-off();
+            transition: @display-transition;
+        }
+    }
+
+    &-is-scrollable {
+        .footer {
+            .icon {
+                .display-on();
+            }
+        }
+    }
+}

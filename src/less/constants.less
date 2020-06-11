@@ -1,0 +1,53 @@
+@min-width: 1366px;
+
+@projects-image-height: 480px;
+@projects-image-width: 387px;
+
+@projects-image-heigh_landscape: 310px;
+@projects-image-width_landscape: 420px;
+
+@portfolio-toggler-image-width: 440px;
+
+
+//Colors
+@main-color: #333;
+@main-color-disabled: #C5C8CC;
+@main-color-inverse: #f0f0f0;
+@colored-color: #CA4D27;
+
+//animations
+@animation-time_default: .4s;
+
+@display-transition: opacity @animation-time_default, visibility @animation-time_default;
+@animation-timing-custom: cubic-bezier(0.000, 0.000, 0.755, 1.650);
+
+//Mixins
+.display-off() {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.display-on() {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.bg_alpha_calc (@desired_colour, @desired_alpha, @background_colour: white) {
+    @r3: red(@desired_colour);
+    @g3: green(@desired_colour);
+    @b3: blue(@desired_colour);
+
+    @r2: red(@background_colour);
+    @g2: green(@background_colour);
+    @b2: blue(@background_colour);
+
+    // r1 = (r3 - r2 + r2 * a1) / a1
+    @r1: (@r3 - @r2 + (@r2 * @desired_alpha)) / @desired_alpha;
+    @g1: (@g3 - @g2 + (@g2 * @desired_alpha)) / @desired_alpha;
+    @b1: (@b3 - @b2 + (@b2 * @desired_alpha)) / @desired_alpha;
+
+    background-color: @desired_colour;
+    background-color: rgba(@r1, @g1, @b1, @desired_alpha);
+
+}

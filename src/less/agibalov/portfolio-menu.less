@@ -1,0 +1,354 @@
+.agibalov-portfolio-menu {
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    z-index: 98;
+    font-size: 40px;
+    line-height: 62px;
+    text-transform: uppercase;
+    .display-off();
+    transform: translateZ(0);
+    transition: opacity @animation-time_default / 2 ease 2.5 * @animation-time_default, visibility @animation-time_default / 2 ease 2.5 * @animation-time_default;
+
+    &::before {
+        content: '';
+        position: fixed;
+        right: 0px;
+        top: 50%;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin-top: -50px;
+        background: #222323;
+        box-shadow: 0 0 0 300px rgba(34, 35, 35, 0.5);
+        //background: #fff;
+        //box-shadow: 0 0 0 300px rgba(255, 255, 255, 0.5);
+        animation: portfolioMenuCloseAnimation 2s;
+        border: 1px solid #fff;
+    }
+
+    .container {
+        position: relative;
+        padding-right: 50%;
+    }
+
+    .projects {
+        &-list-container {
+            height: 100vh;
+            width: @min-width / 2;
+            //background: green;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+
+            &::before,
+            &::after {
+                content: ' ';
+                position: absolute;
+                z-index: 2;
+                left: 0;
+                right: 0;
+                height: 10px;
+                background: #222323;
+                box-shadow: 0px 0px 50px 50px #222323;
+            }
+
+            &::before {
+                top: 0;
+            }
+
+            &::after {
+                bottom: 0;
+            }
+        }
+
+        &-name {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            margin-top: @projects-image-height / 2;
+            transform-origin: 0 0;
+            transform: rotate(-90deg);
+            min-width: 60vh;
+
+            &_list {
+                margin: 0;
+                padding: 0;
+                width: 70px;
+                color: #fff;
+                list-style-type: none;
+                text-transform: uppercase;
+                transition: transform 1s ease-in-out;
+
+                &-item {
+                    height: 100vh;
+                    position: relative;
+                }
+            }
+
+            &_text {
+                font-size: 32px;
+                line-height: 39px;
+                display: block;
+            }
+
+            &_descrition {
+                font-size: 13px;
+                display: block;
+                line-height: 23px;
+            }
+
+            &_descrition-dates {
+                font-size: 19px;
+            }
+
+            &_landscaped-image {
+                margin-top: @projects-image-heigh_landscape / 2;
+            }
+
+        }
+
+        &-photo {
+            &_list {
+                margin: 0;
+                padding: 0;
+                width: 419px;
+                list-style-type: none;
+                transition: transform 1s ease-in-out;
+
+                &-item {
+                    width: 419px;
+                    height: 100vh;
+                    position: relative;
+                }
+            }
+
+            &_link {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                //top: 50%;
+                //height: 480px;
+                //  background: blue;
+                //margin-top: -480px / 2;
+                display: flex;
+                align-items: flex-end;
+
+            }
+
+            &_img {
+                box-shadow: 5px 5px 27px 0px rgba(0, 0, 0, .5);
+
+                &-text {
+                    color: #fff;
+                    position: absolute;
+                    display: block;
+                    top: 0;
+                    text-transform: none;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    font-size: 60px;
+                    line-height: 74px;
+                    text-align: center;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    line-height: 310px;
+                }
+            }
+        }
+    }
+}
+.portfolio-menu-opened-from-start {
+    .agibalov-portfolio-menu {
+        &::before {
+            border: 0 solid #fff;
+        }
+    }
+}
+.portfolio-menu_toggler {
+
+    &-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        .display-on();
+        transition: opacity ease-in-out @animation-time_default,
+            visibility ease-in-out @animation-time_default;
+
+        .container {
+            // background: red;
+            position: relative;
+            height: 100vh;
+            transform: translateZ(0);
+        }
+    }
+
+    &-btn {
+        position: absolute;
+        box-sizing: border-box;
+        top: -250px;
+        left: @min-width - @portfolio-toggler-image-width;
+        height: 560px;
+        transition: top @animation-time_default ease-in-out @animation-time_default / 2,
+            left  @animation-time_default ease-in-out @animation-time_default / 2,
+            height @animation-time_default ease-in-out @animation-time_default / 2,
+            transform @animation-time_default ease-in-out @animation-time_default / 2;
+        &_landscape {
+            top: -100px
+        }
+
+        &-img {
+            width: @portfolio-toggler-image-width;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.9);
+            border: 5px solid #fff;
+            transform: rotate(-12deg);
+           transition: box-shadow ease-in-out @animation-time_default / 2,
+                transform @animation-time_default / 2 @animation-timing-custom @animation-time_default / 2,
+                border @animation-time_default / 2 ease-in-out,
+                width @animation-timing-custom @animation-time_default;
+        }
+
+        &:hover {
+            .portfolio-menu_toggler-btn-img {
+                box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.9);
+            }
+        }
+
+    }
+}
+
+.portfolio-menu-opened {
+    &.agibalov-biography .header .nav {
+        margin-right: -13px !important;
+    }
+
+    .agibalov-portfolio-menu {
+        height: 100vh;
+        width: 100vw;
+        // left: 0;
+        .display-on();
+        transition: opacity @animation-time_default / 2 ease, visibility @animation-time_default / 2 ease;
+
+        &::before {
+            animation: portfolioMenuOpenAnimation 2s;
+            width: 300vw;
+            height: 300vw;
+            top: 50%;
+            right: -10vw;
+            border-radius: 50%;
+            margin-top: -150vw;
+        }
+    }
+
+    .container.scroll-sign {
+        position: fixed;
+        .display-on();
+        transition: opacity @animation-time_default / 2 ease 2 * @animation-time_default, visibility @animation-time_default / 2 ease 2 * @animation-time_default;
+
+        .icon {
+            .display-on();
+        }
+    }
+
+    #agibalovPortfolioMenuContainer {
+        .display-on();
+        transition: opacity @animation-time_default / 2 ease 1.5 * @animation-time_default, visibility @animation-time_default / 2 ease @animation-time_default / 2;
+    }
+
+    .portfolio-menu_toggler {
+        &-wrapper {
+            .display-off();
+            transition: opacity @animation-time_default ease-in-out @animation-time_default,
+                visibility @animation-time_default ease-in-out @animation-time_default;
+        }
+
+        &-btn {
+            top: 50%;
+            left: @min-width / 2 - @projects-image-width - 8px;
+            transform: translateY(-50%);
+            height: 479px;
+
+            &_landscape {
+                height: 310px;
+                .portfolio-menu_toggler-btn-img {
+                    width: 419px;
+                }
+            }
+            &-img {
+                transform: rotate(0);
+                width: @projects-image-width;
+                border: 0px solid;
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.9);
+            }
+        }
+    }
+
+}
+
+#agibalovPortfolioMenuContainer {
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    position: relative;
+    transform: translateZ(0);
+
+    .display-off();
+    transition: opacity @animation-time_default ease , visibility @animation-time_default ease  @animation-time_default;
+    background-image: url('../img/agibalov-portfolio-menu-bg.png');
+    //background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    //background-size: contain;
+
+}
+
+@keyframes portfolioMenuOpenAnimation {
+    0% {
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        top: 50%;
+        margin-top: 0;
+    }
+
+    100% {
+        width: 300vw;
+        height: 300vw;
+        top: 50%;
+        right: -100vw;
+        border-radius: 50%;
+        margin-top: -150vw;
+    }
+}
+
+@keyframes portfolioMenuCloseAnimation {
+    0% {
+        width: 300vw;
+        height: 300vw;
+        top: 50%;
+        right: -100vw;
+        margin-top: -150vw;
+    }
+
+    70% {
+        width: 50vw;
+        height: 50vw;
+        top: 50%;
+        right: -100vw;
+        margin-top: -25vw;
+    }
+
+    100% {
+        width: 0;
+        height: 0;
+        top: 50%;
+        right: 0px;
+
+    }
+}

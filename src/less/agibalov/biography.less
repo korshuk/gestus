@@ -1,0 +1,371 @@
+.agibalov-page-dark{
+    background: #222323;
+
+
+    
+}
+.agibalov-biography {
+    .header {
+        color: @main-color-disabled;
+
+        .logo {
+            &-normal {
+                .display-off();
+            }
+
+            &-menu-opened {
+                .display-off();
+            }
+
+            &-agibalov {
+                .display-on();
+            }
+        }
+
+        .search {
+            &-block {
+                &::after {
+                    border-color: @main-color-disabled;
+                }
+            }
+
+            &-input {
+                color: @main-color-disabled;
+            }
+
+            &-toggle-btn {
+                background: rgba(34, 35, 35, 0);
+
+                &::before,
+                &::after {
+                    background-color: @main-color-disabled;
+                }
+
+                &:hover {
+                    background: rgba(34, 35, 35, .7);
+                }
+
+            }
+        }
+
+        .nav-lang {
+            .icon {
+                filter: invert(100%) contrast(100%);
+                ;
+            }
+
+            .nav-link:hover {
+                color: @main-color-disabled;
+            }
+        }
+
+        .hamburger {
+
+            &-inner,
+            &-inner:after,
+            &-inner:before {
+                background-color: @main-color-disabled;
+            }
+
+            &:hover {
+
+                .hamburger-inner,
+                .hamburger-inner:after,
+                .hamburger-inner:before {
+                    background-color: @main-color-disabled;
+                }
+            }
+        } 
+    }
+    .header {
+        .nav {
+            margin-right: 440px;
+            transition: margin ease-in-out @animation-time_default / 4;
+        }
+    }
+    .biography-header-wrapper {
+        box-sizing: border-box;
+        height: 100vh;
+        border-bottom: 5px solid #fff;
+    }
+
+    .person-header {
+        box-sizing: border-box;
+        height: 100vh;
+        background: center bottom url('../img/agibalov-biography-header.png') no-repeat;
+        position: relative;
+        border-bottom: 5px solid transparent;
+        opacity: 0;
+        transition: @display-transition;
+    }
+    &.is-loaded {
+        .person-header {
+            opacity: 1;
+        }
+    }
+
+    .person-identity {
+        position: absolute;
+        bottom: 0;
+        right: 3px;
+        height: 344px;
+    }
+
+    .person-activities-list {
+        list-style-type: none;
+        color: #fff;
+        font-size: 32px;
+        transform: rotate(-12deg);
+        transform-origin: 0 0;
+        padding: 0 0 0 18px;
+        margin-top: 2px;
+        font-family: "FuturaBook";
+    }
+
+    .biography {
+        &-wrapper {
+            padding-top: 264px;
+            background: center top url('../img/agibalov-biography-bg.png') no-repeat;
+        }
+
+        &-row {
+            &_dates {
+                &-right {
+                    text-align: right;
+
+                    .biography-list-item {
+                        text-align: left;
+                    }
+
+                    .biography-ivent {
+                        order: 0;
+                    }
+
+                    .biography-dates {
+                        order: 1;
+                    }
+
+                }
+
+                &-left {
+                    text-align: left;
+
+                    .biography-ivent {
+                        order: 1;
+                    }
+
+                    .biography-dates {
+                        order: 0;
+                        text-align: right;
+                    }
+
+
+                }
+
+                &-colored {
+                    .biography-dates {
+                        color: #E35225;
+                    }
+
+                    .biography-dates_link {
+                        color: #E35225;
+
+                        .biography_main-date {
+                            &::after {
+                                background: #E35225;
+                            }
+                        }
+
+                        &:hover {
+                            color: #fff;
+
+                            .biography_main-date {
+                                color: #fff;
+
+                                &::after {
+                                    background: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-01 {
+                padding-right: 35px;
+                margin-bottom: 106px;
+
+                .biography-ivent {
+                    width: 481px;
+                    min-width: 481px;
+                    padding-right: 75px;
+                }
+
+                .biography-list-item {
+                    margin-bottom: 15px;
+                }
+            }
+
+            &-02 {
+                margin-bottom: 292px;
+                margin-right: -22px;
+
+                .biography-ivent {
+                    //padding-top: 20px;
+                }
+
+                .biography-list-item {
+                    margin-bottom: 15px;
+                }
+            }
+
+            &-03 {
+                padding-left: 316px;
+                margin-bottom: 239px;
+
+                .biography-ivent {
+                    padding-left: 39px;
+                    min-width: 480px;
+                    width: 480px;
+                }
+
+                .biography-dates {
+                    // width: 180px;
+                    // min-width: 180px;
+                }
+            }
+
+            &-04 {
+                padding-left: 83px;
+                margin-bottom: 301px;
+
+                .biography-ivent {
+                    padding-left: 40px;
+                    min-width: 600px;
+                    width: 600px;
+                }
+
+                .biography-list-item {
+                    margin-bottom: 15px;
+                }
+            }
+
+            &-05 {
+                padding-left: 180px;
+                margin-bottom: 136px;
+
+                .biography-ivent {
+                    padding-left: 41px;
+                    min-width: 20px;
+                    width: 405px;
+                }
+            }
+
+        }
+
+        &-list {
+            display: inline-block;
+            list-style-type: none;
+            color: #fff;
+            font-size: 20px;
+            line-height: 25px;
+            font-family: 'Open Sans', sans-serif;
+            transform: rotate(-12deg);
+            padding: 0;
+            margin: 0;
+
+            &-item {
+                display: flex;
+                margin-bottom: 15px;
+            }
+
+        }
+
+        &-ivent {
+            width: 550px;
+            min-width: 550px;
+            padding-top: 10px;
+        }
+
+        &-dates {
+            width: 260px;
+            min-width: 260px;
+            font-size: 35px;
+            line-height: 43px;
+            font-family: "FuturaMedium";
+
+            &_link {
+
+                text-transform: none;
+                text-decoration: none;
+                color: #fff;
+                transition: color ease @animation-time_default / 2;
+
+                .biography_main-date {
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: 7px;
+                        left: 0;
+                        right: 0;
+                        height: 2px;
+                        background: #fff;
+                        transition: background-color ease @animation-time_default / 2;
+
+                    }
+                }
+
+                &:hover {
+                    color: #E35225;
+
+                    .biography_main-date {
+                        color: #E35225;
+
+                        &::after {
+                            background: #E35225;
+                        }
+                    }
+                }
+
+                &-dark {
+                    &:hover {
+                        color: #BD3F19;
+
+                        .biography_main-date {
+                            color: #BD3F19;
+
+                            &::after {
+                                background: #BD3F19;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &_main-date {
+            font-size: 65px;
+            line-height: 80px;
+        }
+    }
+
+    .btn-more {
+        display: inline-block;
+        background: #E35225;
+        padding: 17px 14px;
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: "FuturaMedium";
+        font-size: 22px;
+        line-height: 27px;
+        margin-top: 20px;
+        transition: background-color ease @animation-time_default / 2;
+
+        &:hover {
+            background: #BD3F19;
+        }
+    }
+}

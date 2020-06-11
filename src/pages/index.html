@@ -1,0 +1,102 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Gestus</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    @@include('partials/styles.html')
+    
+</head>
+
+<body class="index-page">
+    @@include('partials/header.html')
+
+    @@include('partials/main-menu.html')
+
+    <div class="index-menu-container">
+        <main id="indexMenu" class="index-menu">
+            <div class="index-menu-list-container">
+                <ul class="index-menu-list index-menu-main">
+                    <li class="index-menu-list-item">
+                        <a class="index-menu-list-item-link" href="#" data-index-link-image="indexLinkImage01">
+                            <span class="index-menu-link-text">Креативные индустрии</span>
+                            <span class="index-menu-link-hover-text">Креативные индустрии</span>
+                        </a>
+                    </li>
+                    <li class="index-menu-list-item">
+                        <a class="index-menu-list-item-link" href="#">
+                            <span class="index-menu-link-text">Искусство как среда</span>
+                            <span class="index-menu-link-hover-text">Искусство как среда</span>
+                        </a>
+                    </li>
+                    <li class="index-menu-list-item">
+                        <a class="index-menu-list-item-link" href="#">
+                            <span class="index-menu-link-text">Дизайн, меняющий реальность</span>
+                            <span class="index-menu-link-hover-text">Дизайн, меняющий реальность</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="index-menu-list-container">
+                <ul class="index-menu-list index-menu-persons">
+                    <li class="index-menu-list-item">
+                        <a class="index-menu-list-item-link" href="#">
+                            <span class="index-menu-link-text">Борис Школьников</span>
+                        </a>
+                    </li>
+                    <li class="index-menu-list-item">
+                        <a class="index-menu-list-item-link" href="#">
+                            <span class="index-menu-link-text">Юрий Градов</span>
+                        </a>
+                    </li>
+                    <li class="index-menu-list-item">
+                        <a class="index-menu-list-item-link" href="biography-agibalov.html" data-index-link-image="indexLinkImage02">
+                            <span class="index-menu-link-text">Лев Агибалов</span>
+                            <span class="index-menu-link-hover-text">Лев Агибалов</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="index-menu-list-container">
+                <ul class="index-menu-list index-menu-persons">
+                    <li class="index-menu-list-item">
+                        <a class="index-menu-list-item-link" href="#">
+                            <span class="index-menu-link-text">Юрий Градов</span>
+                        </a>
+                    </li>
+                    <li class="index-menu-list-item">
+                        <a class="index-menu-list-item-link" href="#">
+                            <span class="index-menu-link-text">Борис Школьников</span>
+                        </a>
+                    </li>
+                    <li class="index-menu-list-item">
+                        <a class="index-menu-list-item-link" href="#">
+                            <span class="index-menu-link-text">Эдвард Земляничников</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <span id="indexLinkImage01" class="index-menu-list-item-link-image">
+        </span>
+        <span id="indexLinkImage02" class="index-menu-list-item-link-image">
+        </span>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <i class="icon icon-mouse-scroll"></i>
+        </div>
+    </footer>
+
+    @@include('partials/scripts.html')
+
+</body>
+
+</html>

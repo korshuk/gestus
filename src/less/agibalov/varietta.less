@@ -1,0 +1,115 @@
+.agibalov-project-varietta {
+    .header {
+        color: #333;
+        &.on-scroll {
+            background-color: rgba(255,255,255,0.7);
+        }
+
+        .logo {
+            &-normal {
+                .display-on();
+            }
+
+            &-menu-opened {
+                .display-off();
+            }
+
+            &-agibalov {
+                .display-off();
+            }
+        }
+    }
+
+    figure {
+        margin: 0;
+        position: relative;
+    }
+
+    figcaption {
+        position: absolute;
+        bottom: -26px;
+    }
+
+    .varietta-page {
+
+        &_caption {
+            font-size: 100px;
+            line-height: 123px;
+            text-align: center;
+            font-weight: 300;
+            margin-top: 280px;
+            margin-bottom: 116px;
+        }
+
+        &_project {
+            display: flex;
+            margin-bottom: 100px;
+
+            &_img-small {
+                width: 466px;
+                min-width: 466px;
+            }
+
+            &_inverse {
+                .varietta-page_project_img-small {
+                    order: 1;
+                    text-align: right;
+                    .varietta-page_image-01 {
+                        margin-right: 85px;
+                        margin-left: 0;
+                    }
+                }
+
+                .varietta-page_project_img {
+                    order: 0;
+                }
+            }
+
+        }
+
+        &_image {
+
+            &-01 {
+                margin-left: 85px;
+                margin-bottom: 181px;
+
+                img {
+                    width: 225px;
+                    height: 270px;
+                }
+            }
+
+            &-02 {
+                img {
+                    width: 290px;
+                    height: 195px;
+                }
+            }
+
+            &-03 {
+                margin-top: 31px;
+
+                img {
+                    width: 700px;
+                    height: 518px;
+                }
+            }
+        }
+
+        &_gallery {
+            &.container {
+                padding: 0 100px;
+            }
+
+            &-link {
+                color: #828282;
+                font-size: 19px;
+                line-height: 26px;
+                font-family: 'Open Sans', sans-serif;
+                text-decoration: none;
+
+            }
+        }
+
+    }
+}

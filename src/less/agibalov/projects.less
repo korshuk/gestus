@@ -1,0 +1,230 @@
+.agibalov-project {
+    .header {
+        color: #333;
+        .logo {
+            &-normal {
+                .display-off();
+            }
+
+            &-menu-opened {
+                .display-off();
+            }
+
+            &-agibalov {
+                .display-on();
+            }
+        }
+    }
+    .projects-header-wrapper {
+        height: 1160px;
+        margin-left: 50%;
+        width: 50vw;
+        position: relative;
+    }
+
+    .projects-menu {
+        background: radial-gradient(ellipse at center,
+                #fff 0%,
+                #fff 70%,
+                rgba(255, 255, 255, 0) 70.3%);
+        height: 100%;
+        width: 100%;
+        font-size: 32px;
+        line-height: 42px;
+        font-family: "FuturaBook";
+        transform-origin: center center;
+        transform: rotate(-12deg);
+
+        &-link {
+            white-space: nowrap;
+            color: #333;
+            text-decoration: none;
+            padding: 0 10px;
+            position: relative;
+            &::after {
+                content: ' ';
+                position: absolute;
+                bottom: 5px;
+                height: 1px;
+                background: #333;
+                left: 50%;
+                right: 50%;
+                transition: left @animation-time_default / 2 ease-in-out,
+                            right @animation-time_default / 2 ease-in-out;
+            }
+            &:hover {
+                &::after {
+                    left: 8px;
+                    right: 8px;
+                }
+            }
+            &-active {
+                color: #E35225;
+                &::after {
+                    background: #E35225;
+                    left: 8px;
+                    right: 8px;
+                }
+            }
+        }
+
+        &_wrapper {
+            width: 320px;
+            height: 320px;
+            position: absolute;
+            left: -555px;
+            top: 260px;
+        }
+
+        &::before {
+            content: "";
+            float: left;
+            height: 100%;
+            width: 50%;
+            shape-outside: polygon(0 0, 98% 0, 50% 4%, 20.4% 17.3%, 2% 32.6%, 0 50%, 2% 65.6%, 18.4% 82.7%, 45% 94%, 98% 100%, 0 100%);
+            shape-margin: 0;
+        }
+
+        p {
+            height: 100%;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        p::before {
+            content: "";
+            float: right;
+            height: 100%;
+            width: 50%;
+            shape-outside: polygon(2% -7%, 100% -6%, 100% 94%, 0% 94%, 52% 88%, 79.6% 76.7%, 98% 60.6%, 100% 44%, 97% 26.6%, 79.6% 11.3%, 54% 0%);
+            shape-margin: 0;
+        }
+
+        // background: #fff;
+        //border-radius: 50%;
+
+    }
+
+    .project {
+        &-name {
+            margin: 0;
+            box-sizing: border-box;
+            align-self: flex-end;
+            text-align: center;
+            width: 100%;
+            font-size: 120px;
+            line-height: 60px;
+            font-family: "FuturaBook";
+            color: #E35225;
+            padding-left: 140px;
+            font-weight: 300;
+
+            &_container {
+                width: 1300px;
+                height: 200vw;
+                background: #fff;
+                position: absolute;
+                bottom: 0;
+                left: -1300px;
+                display: flex;
+                transform-origin: right bottom;
+                transform: rotate(78deg);
+            }
+
+            &_date {
+                font-size: 50px;
+            }
+
+            &_place {
+                font-size: 35px;
+            }
+        }
+
+        &-description {
+
+            &_container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 21px;
+                line-height: 24px;
+                padding-top: 35px;
+            }
+
+            &_part {
+                margin-top: 100px;
+                width: 400px;
+
+                &-01 {
+                    margin-left: 167px;
+                }
+
+                &-02 {
+                    margin-left: 110px;
+                }
+
+                &-03 {
+                    margin-left: 60px;
+                }
+            }
+        }
+
+        &-gallery {
+            display: flex;
+            padding-top: 100px;
+            transform-origin: center top;
+            transform: rotate(-12deg);
+
+            &_left {
+                width: 50%;
+                text-align: right;
+                padding-right: 257px;
+                box-sizing: border-box;
+            }
+
+            &_right {
+                width: 50%;
+            }
+
+            &_img {
+                &-link {
+                    display: block;
+                    margin-bottom: 200px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    &-01 {
+                        margin-top: 156px;
+                        margin-right: 322px - 257px;
+                        margin-bottom: 0;
+                    }
+
+                    &-02 {
+                        margin-top: 149px;
+                        margin-bottom: 0;
+                        margin-right: 0;
+                    }
+
+                    &-03 {
+                        margin-top: 50px;
+                        margin-bottom: 0;
+                        margin-right: 0;
+                    }
+
+                    &-04 {
+                        margin-top: -12px;
+                        margin-bottom: 0;
+                        margin-right: 551px - 257px;
+                    }
+                }
+
+            }
+        }
+    }
+}

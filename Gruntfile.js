@@ -22,14 +22,14 @@ module.exports = function (grunt) {
               src: '*.html',
               // Destination directory to copy files to
               expand: true, cwd: 'src/pages/',
-              dest: 'dist/'
+              dest: 'docs/'
             }
         },
         copy: {
             styles: {
               files: [
                 // includes files within path
-                {expand: true, src: ['css/*'], dest: 'dist/', cwd: 'src/', filter: 'isFile'},
+                {expand: true, src: ['css/*'], dest: 'docs/', cwd: 'src/', filter: 'isFile'},
           
                 // includes files within path and its sub-directories
                // {expand: true, src: ['path/**'], dest: 'dest/'},
@@ -43,22 +43,22 @@ module.exports = function (grunt) {
             },
             scropts: {
                 files: [
-                  {expand: true, src: ['js/*'], dest: 'dist/', cwd: 'src/', filter: 'isFile'},
+                  {expand: true, src: ['js/*'], dest: 'docs/', cwd: 'src/', filter: 'isFile'},
                 ],
             },
             images: {
                 files: [
-                  {expand: true, src: ['img/**'], dest: 'dist/', cwd: 'src/'},
+                  {expand: true, src: ['img/**'], dest: 'docs/', cwd: 'src/'},
                 ],
             },
             fonts: {
                 files: [
-                  {expand: true, src: ['fonts/**'], dest: 'dist/', cwd: 'src/'},
+                  {expand: true, src: ['fonts/**'], dest: 'docs/', cwd: 'src/'},
                 ],
             },
             root: {
                 files: [
-                  {expand: true, src: ['**'], dest: 'dist/', cwd: 'src/root-files/'},
+                  {expand: true, src: ['**'], dest: 'docs/', cwd: 'src/root-files/'},
                 ],
             },
           },

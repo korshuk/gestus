@@ -7,19 +7,19 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="manifest" href="site.webmanifest">
+
 	<link rel="apple-touch-icon" href="icon.png">
 
-	@@include('partials/styles.html')
+	{{ include('partials/styles.html') }}
 </head>
 
 <body class="agibalov-biography agibalov-page-dark">
 	<div class="scrollbar-wrapper">
-		@@include('partials/header.html')
+		{{ include('partials/header.html') }}
 
-		@@include('partials/main-menu.html')
+		{{ include('partials/main-menu.html', {"agibalov": true, "biography": true}) }}
 
-		@@include('partials/agibalov-portfolio-menu.html')
+		{{ include('partials/agibalov-portfolio-menu.html') }}
 		<div class="biography-header-wrapper">
 			<header class="person-header container">
 				<div class="person-identity">
@@ -223,6 +223,6 @@
 			<a href="index.html" class="btn-back">назад</a>
 		</div>
 	</div>
-	@@include('partials/scripts.html')
+	{{ include('partials/scripts.html') }}
 </body>
 </html>

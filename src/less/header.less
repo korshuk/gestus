@@ -1,5 +1,16 @@
 @nav-list-item-padding: 0 13px;
 
+.navAboutLink(@color, @hoverColor) {
+    
+        .nav-link{
+            color: @color;
+            &:hover {
+                color: @hoverColor;
+            }
+        }
+
+}
+
 .header {
     width: 100%;
     position: fixed;
@@ -74,7 +85,15 @@
         }
     }
 
-    &-link {}
+    &-link {
+        text-decoration: none;
+        color: @main-color;
+        line-height: 26px;
+        transition: color @animation-time_default / 2 @animation-timing-custom;
+        &:hover {
+            color: @main-color-disabled;
+        }
+    }
 
     &-lang {
         cursor: pointer;
@@ -337,7 +356,23 @@
 .main-menu-opened {
     .header {
         color: @main-color-inverse !important;
-
+        &.on-scroll {
+            .container {
+                .logo {
+                    &-normal {
+                        .display-off();
+                    }
+    
+                    &-agibalov {
+                        .display-off();
+                    }
+    
+                    &-menu-opened {
+                        .display-on();
+                    }
+                }
+            }
+        }
         .container {
             .logo {
                 &-normal {
@@ -356,37 +391,43 @@
             .search {
                 &-block {
                     &::after {
-                        border-color: @main-color-inverse;
+                        border-color: @main-color-inverse !important;
                     }
                 }
 
                 &-input {
-                    color: @main-color-inverse;
+                    color: @main-color-inverse !important;
                 }
 
                 &-toggle-btn {
-                    background: rgba(200, 76, 37, 0);
+                    background: rgba(200, 76, 37, 0) !important;
 
                     &::before,
                     &::after {
-                        background-color: @main-color-inverse;
+                        background-color: @main-color-inverse !important;
                     }
 
                     &:hover {
-                        background: rgba(200, 76, 37, .7);
+                        background: rgba(200, 76, 37, .7) !important;
                     }
 
                 }
             }
-
+            .nav-about {
+                .nav-link{
+                    color: @main-color-inverse !important;
+                    &:hover {
+                        color: @main-color-disabled !important;
+                    }
+                }        
+            }
             .nav-lang {
                 .icon {
-                    filter: invert(100%) contrast(100%);
-                    ;
+                    filter: invert(100%) contrast(100%) !important;
                 }
 
                 .nav-link:hover {
-                    color: @main-color-inverse;
+                    color: @main-color-inverse !important;
                 }
             }
 

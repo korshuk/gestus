@@ -7,10 +7,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -19,7 +18,7 @@
     <div class="scrollbar-wrapper">
         <header class="header">
     <div class="container clearfix">
-        <a class="logo" href="index.html">
+        <a class="logo" href="/">
             <span class="logo-normal"></span>
             <span class="logo-menu-opened"></span>
             <span class="logo-agibalov"></span>
@@ -31,6 +30,9 @@
                         <input id="searchInput" class="search-input" type="text">
                         <a class="search-toggle-btn" href="#"></a>
                     </div>
+                </li>
+                <li class="nav-list-item nav-about">
+                    <a class="nav-link" href="about.html">about</a>
                 </li>
                 <li class="nav-list-item nav-lang">
                     <span class="active-lang">ru</span><i class="icon icon-menu-open-arrow"></i>
@@ -67,20 +69,22 @@
                 <li class="main-menu-list-item main-menu-list-item_primary  main-menu-list-item_1">
                     <a href="" class="main-menu-link"><span>Искусство как среда</span></a>
                 </li>
-                <li class="main-menu-list-item  main-menu-list-item_2">
+                
+                <li class="main-menu-list-item  main-menu-list-item_2 main-menu-list-item_active  ">
+                
                     <a href="" class="main-menu-link"><span>Лев Агибалов</span></a>
                     <ul class="main-menu-sub-list">
                         <li class="main-menu-sub-list-item">
-                            <a href="biography-agibalov.html" class="main-menu-link">Biography</a>
+                            <a href="biography-agibalov.html" class="main-menu-link ">Biography</a>
                         </li>
                         <li class="main-menu-sub-list-item">
-                            <a href="agibalov-intro.html" class="main-menu-link">Intro</a>
+                            <a href="agibalov-intro.html" class="main-menu-link main-menu-link_active">Intro</a>
                         </li>
                         <li class="main-menu-sub-list-item">
-                            <a href="agibalov-main-projects.html" class="main-menu-link">Main projects</a>
+                            <a href="agibalov-main-projects.html" class="main-menu-link ">Main projects</a>
                         </li>
                         <li class="main-menu-sub-list-item">
-                            <a href="agibalov-project-page-varietta.html" class="main-menu-link">Varietta</a>
+                            <a href="agibalov-project-page-varietta.html" class="main-menu-link ">Varietta</a>
                         </li>
                     </ul>
                 </li>
@@ -144,13 +148,8 @@
 </div>
 
         <div class="intro-header-wrapper">
-            <div id="introHeaderBackground" class="intro-header-bg" data-hover-only="true">
-                <div class="intro-header-bg-text intro-header-bg-text_0" data-depth="0.6"><span>G</span></div>
-                <div class="intro-header-bg-text intro-header-bg-text_1" data-depth="0.8"><span>E</span></div>
-                <div class="intro-header-bg-text intro-header-bg-text_2" data-depth="0.4"><span>S</span></div>
-                <div class="intro-header-bg-text intro-header-bg-text_3" data-depth="0.6"><span>T</span></div>
-                <div class="intro-header-bg-text intro-header-bg-text_4" data-depth="0.4"><span>U</span></div>
-                <div class="intro-header-bg-text intro-header-bg-text_5" data-depth="0.8"><span>S</span></div>
+            <div id="introHeaderBackground" class="intro-header-bg">
+                
             </div>
             <section class="person-intro-header container">
                 <img class="person-intro-photo" src="img/agibalov-person-photo.jpg">

@@ -112,11 +112,11 @@
         list-style-type: none;
         padding: 0;
         margin: 0;
-
         &-item {
             position: absolute;
 
-            &:hover {
+            &:hover,
+            &_active {
                 .main-menu-link {
                     span {
                         transform: rotateX(360deg);
@@ -221,7 +221,8 @@
                 content: none;
             }
 
-            &:hover {
+            &:hover,
+            &_active {
                 color: @main-color;
             }
         }

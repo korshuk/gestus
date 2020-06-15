@@ -125,16 +125,24 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     color: #fff;
-    transform: rotate(90deg) translateX(-100%);
-    transform-origin: left bottom;
+    transform: rotate(90deg);
+    transform-origin: left center;
     padding: 10px 30px;
     background: #E35225;
     position: absolute;
-    left: 5px;
+    left: 20px;
     top: 50%;
     font-size: 12px;
+    margin-top: -50px;
+    transition: box-shadow ease-in-out  @animation-time_default / 2, 
+                padding ease-in-out  @animation-time_default / 2,
+                margin-top ease-in-out  @animation-time_default / 2,
+                left ease-in-out  @animation-time_default / 2;
     &:hover {
-        box-shadow: 0px -10px 20px -7px rgba(0,0,0,0.3), 5px 5px 15px 5px rgba(0,0,0,0);
+      padding: 15px 30px;
+      margin-top: -55px;
+      left: 25px;
+      box-shadow: 0px -10px 20px -7px rgba(0,0,0,0.3), 5px 5px 15px 5px rgba(0,0,0,0);
     }
 }
 

@@ -9,7 +9,8 @@ module.exports = function (grunt) {
                     optimization: 2
                 },
                 files: {
-                    "src/css/style.css": "src/less/main.less"
+                    "src/css/style.css": "src/less/main.less",
+                    "src/css/style404.css": "src/less/style404.less"
                 }
             }
         },
@@ -22,14 +23,26 @@ module.exports = function (grunt) {
               src: '*.html',
               // Destination directory to copy files to
               expand: true, cwd: 'src/pages/',
-              dest: 'docs/'
+              dest: 'dist/'
             }
+        },
+        includereplacemore: {
+          gestus: {
+            options: {
+              // Task-specific options go here.
+            },
+            // Files to perform replacements and includes with
+            src: '*.html',
+            // Destination directory to copy files to
+            expand: true, cwd: 'src/pages/',
+            dest: 'dist/'
+          }
         },
         copy: {
             styles: {
               files: [
                 // includes files within path
-                {expand: true, src: ['css/*'], dest: 'docs/', cwd: 'src/', filter: 'isFile'},
+                {expand: true, src: ['css/*'], dest: 'dist/', cwd: 'src/', filter: 'isFile'},
           
                 // includes files within path and its sub-directories
                // {expand: true, src: ['path/**'], dest: 'dest/'},
@@ -43,29 +56,29 @@ module.exports = function (grunt) {
             },
             scropts: {
                 files: [
-                  {expand: true, src: ['js/*'], dest: 'docs/', cwd: 'src/', filter: 'isFile'},
+                  {expand: true, src: ['js/*'], dest: 'dist/', cwd: 'src/', filter: 'isFile'},
                 ],
             },
             images: {
                 files: [
-                  {expand: true, src: ['img/**'], dest: 'docs/', cwd: 'src/'},
+                  {expand: true, src: ['img/**'], dest: 'dist/', cwd: 'src/'},
                 ],
             },
             fonts: {
                 files: [
-                  {expand: true, src: ['fonts/**'], dest: 'docs/', cwd: 'src/'},
+                  {expand: true, src: ['fonts/**'], dest: 'dist/', cwd: 'src/'},
                 ],
             },
             root: {
                 files: [
-                  {expand: true, src: ['**'], dest: 'docs/', cwd: 'src/root-files/'},
+                  {expand: true, src: ['**'], dest: 'dist/', cwd: 'src/root-files/', dot: true},
                 ],
             },
           },
         watch: {
             styles: {
                 files: ['src/js/**/*.js', 'src/less/**/*.less', 'src/pages/**/*.html', 'src/img/**/**'],
-                tasks: ['less', 'includereplace', 'copy'],
+                tasks: ['less', 'includereplacemore', 'copy'],
                 options: {
                     nospawn: true
                 }
@@ -76,7 +89,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-include-replace');
+    grunt.loadNpmTasks('grunt-include-replace-more');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['less', 'includereplace', 'copy', 'watch']);
+    grunt.registerTask('default', ['less', 'includereplacemore', 'copy', 'watch']);
 };

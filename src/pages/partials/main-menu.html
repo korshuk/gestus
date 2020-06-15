@@ -17,20 +17,22 @@
                 <li class="main-menu-list-item main-menu-list-item_primary  main-menu-list-item_1">
                     <a href="" class="main-menu-link"><span>Искусство как среда</span></a>
                 </li>
-                <li class="main-menu-list-item  main-menu-list-item_2">
+                
+                <li class="main-menu-list-item  main-menu-list-item_2 {{ if agibalov }}main-menu-list-item_active{{ endif }}  ">
+                
                     <a href="" class="main-menu-link"><span>Лев Агибалов</span></a>
                     <ul class="main-menu-sub-list">
                         <li class="main-menu-sub-list-item">
-                            <a href="biography-agibalov.html" class="main-menu-link">Biography</a>
+                            <a href="biography-agibalov.html" class="main-menu-link {{ if biography }}main-menu-link_active{{ endif }}">Biography</a>
                         </li>
                         <li class="main-menu-sub-list-item">
-                            <a href="agibalov-intro.html" class="main-menu-link">Intro</a>
+                            <a href="agibalov-intro.html" class="main-menu-link {{ if intro }}main-menu-link_active{{ endif }}">Intro</a>
                         </li>
                         <li class="main-menu-sub-list-item">
-                            <a href="agibalov-main-projects.html" class="main-menu-link">Main projects</a>
+                            <a href="agibalov-main-projects.html" class="main-menu-link {{ if projects }}main-menu-link_active{{ endif }}">Main projects</a>
                         </li>
                         <li class="main-menu-sub-list-item">
-                            <a href="agibalov-project-page-varietta.html" class="main-menu-link">Varietta</a>
+                            <a href="agibalov-project-page-varietta.html" class="main-menu-link {{ if varietta }}main-menu-link_active{{ endif }}">Varietta</a>
                         </li>
                     </ul>
                 </li>

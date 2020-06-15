@@ -7,17 +7,16 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
 
-    @@include('partials/styles.html')
+    {{ include('partials/styles.html') }}
 </head>
 
 <body class="agibalov-project agibalov-page-dark">
     <div class="scrollbar-wrapper">
-        @@include('partials/header.html')
+        {{ include('partials/header.html') }}
 
-        @@include('partials/main-menu.html')
+        {{ include('partials/main-menu.html', {"agibalov": true, "projects": true}) }}
         <div class="projects-header-wrapper">
             <div id="projectsMenu" class="projects-menu_wrapper">
                 <div id="projectsMenu" class="projects-menu">
@@ -93,7 +92,7 @@
             <a href="agibalov-main-projects.html?from=agibalov-project-page-stecloluks" class="btn-back">назад</a>
         </div>
     </div>
-    @@include('partials/scripts.html')
+    {{ include('partials/scripts.html') }}
 </body>
 
 </html>
